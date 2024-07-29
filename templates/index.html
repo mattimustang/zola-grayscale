@@ -157,7 +157,18 @@
             </div>
         </section>
         <!-- Footer-->
-        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; {{ config.author }} {{ now() | date(format="%Y") }}</div>{% if config.extra.debug %}<div><pre>{{ __tera_context }}</pre></div>{% endif %}</footer>
+        <footer class="footer bg-black small text-center text-white-50">
+            <div class="container px-4 px-lg-5">Copyright &copy; {{ config.author }} {{ now() | date(format="%Y") }}</div>
+            {% if config.extra.debug %}
+            <div class="container text-start">
+                {% set code_start = "```json
+" %}
+                {% set code_end = "
+```" %}
+                {{ code_start ~ __tera_context ~ code_end | markdown() | safe }}
+            </div>
+            {% endif %}
+        </footer>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
