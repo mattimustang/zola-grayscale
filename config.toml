@@ -1,0 +1,43 @@
+# The URL the site will be built for
+base_url = "https://example.com"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+# The site title and description; used in feeds by default.
+title = "Gray Zola"
+description = "A port of the startbootrap Grayscale theme."
+author = "Matthew Flanagan"
+
+highlight_theme = "gray-matter-dark"
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+[extra]
+# Put all your custom variables here
+# print __tera_context in the footer
+debug = false
+
+[extra.site]
+logo = "assets/img/logo.webp"
+favicon = "assets/favicon.png"
+
+[extra.social]
+twitter = "https://twitter.com/__change_me__"
+mastodon = "https://__change_me__/@__change_me__"
+instagram = "https://instagram.com/__change_me__"
+linkedin = "https://linkedin.com/company/__change_me__"
+
+[extra.menu]
+main = [
+    { name = "About", url = "#about", weight = 1 },
+    { name = "Projects", url = "#projects", weight = 2 },
+    { name = "Contact", url = "#contact", weight = 3 }
+]
+button = { text = "Learn More", url = "#about" }
