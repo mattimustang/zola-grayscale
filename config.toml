@@ -24,6 +24,10 @@ highlight_theme = "gray-matter-dark"
 # print __tera_context in the footer
 debug = false
 
+# google analytics token
+google_analytics_token = "XXXXXX"
+
+
 [extra.site]
 logo = "assets/img/logo.webp"
 favicon = "assets/favicon.png"
@@ -34,8 +38,8 @@ mastodon = "https://__change_me__/@__change_me__"
 instagram = "https://instagram.com/__change_me__"
 linkedin = "https://linkedin.com/company/__change_me__"
 
-[extra.menu]
-main = [
+[extra.navigation]
+menu = [
     { name = "About", url = "#about", weight = 1 },
     { name = "Projects", url = "#projects", weight = 2 },
     { name = "Contact", url = "#contact", weight = 3 }

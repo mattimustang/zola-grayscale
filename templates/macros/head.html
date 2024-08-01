@@ -1,0 +1,9 @@
+{% macro title() %}
+<title>
+  {% if page.title %}
+  {{ page.title }} &middot; {{ config.title }}
+  {% else %}
+  {{ config.title }} &middot; {{ config.description }}
+  {% endif %}
+</title>
+{% endmacro title %}

@@ -1,6 +1,6 @@
 ---
 extra:
-  header:
+  masthead:
     title: Gray Zola
     description:
       Pellentesque sit amet neque ut augue blandit aliquet eget eu justo. Vestibulum id lectus sit amet tellus dignissim sagittis.
