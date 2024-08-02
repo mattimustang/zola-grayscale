@@ -5,6 +5,7 @@ extra:
     description:
       Pellentesque sit amet neque ut augue blandit aliquet eget eu justo. Vestibulum id lectus sit amet tellus dignissim sagittis.
     button:
+      id: findoutmore
       text: Find Out More...
       url: "#about"
   about:

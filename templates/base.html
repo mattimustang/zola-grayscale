@@ -1,5 +1,8 @@
 {% import "macros/scripts.html" as scripts %}
 {% import "macros/head.html" as head %}
+
+{% set navigation = load_data(path="navigation.toml") %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,8 +25,8 @@
     {% endblock head %}
 </head>
 <body id="page-top">
-        <!-- Navigation-->
         {% block navigation %}
+        <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container px-4 px-lg-5">
                 <a class="navbar-brand" href="#page-top"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
@@ -33,23 +36,32 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        {% for item in config.extra.navigation.menu %}
-                        <li class="nav-item"><a class="nav-link" href="{{ item.url }}">{{ item.name }}</a></li>
+                        {% for menu in navigation.menu %}
+                        <li class="nav-item{% if menu.haschild %} dropdown{% endif %}">
+                            <a class="nav-link{% if menu.haschild %} dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"{% else %}"{% endif %} href="{{ menu.path }}">{{ menu.name }}</a>
+                            {% if menu.haschild %}
+                            <ul class="dropdown-menu">
+                                {% for item in menu.item %}
+                                <li><a class="dropdown-item" href="{{ menu.path }}{{ item.path }}">{{ item.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </li>
                         {% endfor %}
                     </ul>
                 </div>
             </div>
         </nav>
         {% endblock navigation %}
-        <!-- Masthead-->
         {% block masthead %}
+        <!-- Masthead-->
         <header class="masthead">
             <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
                 <div class="d-flex justify-content-center">
                     <div class="text-center">
                         <h1 class="mx-auto my-0 text-uppercase">{{ section.extra.masthead.title }}</h1>
                         <h2 class="text-white-50 mx-auto mt-2 mb-5">{{ section.extra.masthead.description }}</h2>
-                        <a class="btn btn-primary" href="{{ section.extra.masthead.button.url }}">{{ section.extra.masthead.button.text }}</a>
+                        <a class="btn btn-primary" href="{{ section.extra.masthead.button.url }}" id="{{ section.extra.masthead.button.id }}">{{ section.extra.masthead.button.text }}</a>
                     </div>
                 </div>
             </div>
@@ -57,8 +69,8 @@
         {% endblock masthead %}
         {% block content %}
         {% endblock content %}
-        <!-- Contact-->
         {% block contact %}
+        <!-- Contact-->
         <section class="signup-section" id="contact">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5">
@@ -71,8 +83,8 @@
             </div>
         </section>
         {% endblock contact %}
-        <!-- Social-->
         {% block social %}
+        <!-- Social-->
         <section class="contact-section bg-black" id="social">
             <div class="container px-4 px-lg-5">
                 <div class="social d-flex justify-content-center">
@@ -84,8 +96,8 @@
             </div>
         </section>
         {% endblock social %}
-        <!-- Footer-->
         {% block footer %}
+        <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50">
             <div class="container px-4 px-lg-5">Copyright &copy; {{ config.author }} {{ now() | date(format="%Y") }}</div>
             {% if config.extra.debug %}

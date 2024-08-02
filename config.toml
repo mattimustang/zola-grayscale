@@ -38,10 +38,3 @@ mastodon = "https://__change_me__/@__change_me__"
 instagram = "https://instagram.com/__change_me__"
 linkedin = "https://linkedin.com/company/__change_me__"
 
-[extra.navigation]
-menu = [
-    { name = "About", url = "#about", weight = 1 },
-    { name = "Projects", url = "#projects", weight = 2 },
-    { name = "Contact", url = "#contact", weight = 3 }
-]
-button = { text = "Learn More", url = "#about" }

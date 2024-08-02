@@ -1,0 +1,21 @@
+[[menu]]
+name = "About"
+path = "/#about"
+
+[[menu]]
+name = "Services"
+path = "/services/"
+#haschild = true
+
+  # sub-items of the Blog section
+#  [[menu.item]]
+#  name = "Advisory"
+#  path = "advisory/"
+
+#  [[menu.item]]
+#  name = "Consulting"
+#  path = "consulting/"
+
+[[menu]]
+name = "Contact"
+path = "#contact"
