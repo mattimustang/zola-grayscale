@@ -12,5 +12,5 @@ A port of the StartBootstrap Grayscale theme, for Zola.
 
 ## Demo
 
-(Live Demo)[https://mattimustang.github.io/zola-grayscale/]
+[Live Demo](https://mattimustang.github.io/zola-grayscale/)
 
