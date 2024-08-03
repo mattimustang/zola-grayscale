@@ -9,7 +9,7 @@ build_search_index = false
 
 # The site title and description; used in feeds by default.
 title = "Zola Grayscale"
-description = "A port of the Start Bootrap Grayscale theme for Zola."
+description = "A port of the Start Bootrap Grayscale theme, for Zola."
 author = "Your Website"
 
 [markdown]
