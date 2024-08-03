@@ -1,0 +1,34 @@
+{% macro debug(context, name) %}
+{% if config.extra.debug %}
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#debug" aria-controls="debug">
+    Debug
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="debug" aria-labelledby="debugLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="debugLabel">Debug</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h5 class="font-monospace text-body-secondary">{{ name }}</h5>
+                    </div>
+                    <div class="card-text text-start font-monospace">
+                    {% set code_start = "```json
+" %}
+                    {% set code_end = "
+```" %}
+                    {% if context is string %}
+                        {% set json = context %}
+                    {% else %}
+                        {% set json = context | json_encode(pretty=true) %}
+                    {% endif %}
+                    {{ code_start ~ json ~ code_end | markdown() | safe }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% endmacro debug %}

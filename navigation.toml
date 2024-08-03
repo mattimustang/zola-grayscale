@@ -1,21 +1,9 @@
-[[menu]]
+[[item]]
 name = "About"
-path = "/#about"
-
-[[menu]]
-name = "Services"
-path = "/services/"
-#haschild = true
-
-  # sub-items of the Blog section
-#  [[menu.item]]
-#  name = "Advisory"
-#  path = "advisory/"
-
-#  [[menu.item]]
-#  name = "Consulting"
-#  path = "consulting/"
-
-[[menu]]
+path = "#about"
+[[item]]
+name = "Projects"
+path = "#projects"
+[[item]]
 name = "Contact"
-path = "#contact"
+path = "#signup"

@@ -1,0 +1,15 @@
+name = "zola-grayscale"
+description = "A port of the Start Bootrap Grayscale theme for Zola."
+license = "MIT"
+homepage = "https://github.com/mattimustang/zola-grayscale"
+min_version = "0.19.0"
+demo = "https://example.com"
+
+[author]
+name = "Matthew Flanagan"
+homepage = "https://github.com/mattimustang"
+
+[original]
+author = "Start Bootstrap"
+homepage = "https://startbootstrap.com/themes/grayscale/"
+repo = "https://github.com/StartBootstrap/startbootstrap-grayscale"

@@ -2,16 +2,15 @@
 base_url = "https://example.com"
 
 # Whether to automatically compile all Sass files in the sass directory
-compile_sass = true
+compile_sass = false
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
 # The site title and description; used in feeds by default.
-title = "Gray Zola"
-description = "A port of the startbootrap Grayscale theme."
-author = "Matthew Flanagan"
-
+title = "Zola Grayscale"
+description = "A port of the Start Bootrap Grayscale theme for Zola."
+author = "Your Website"
 
 [markdown]
 # Whether to do syntax highlighting
@@ -20,21 +19,12 @@ highlight_code = true
 highlight_theme = "gray-matter-dark"
 
 [extra]
-# Put all your custom variables here
-# print __tera_context in the footer
+# enable a debug pop out panel to display template context
 debug = false
 
 # google analytics token
-google_analytics_token = "XXXXXX"
+#google_analytics_token = "XXXXXX"
 
-
-[extra.site]
-logo = "assets/img/logo.webp"
-favicon = "assets/favicon.png"
-
-[extra.social]
-twitter = "https://twitter.com/__change_me__"
-mastodon = "https://__change_me__/@__change_me__"
-instagram = "https://instagram.com/__change_me__"
-linkedin = "https://linkedin.com/company/__change_me__"
-
+# SB Forms API token
+# comment this out to remove the contact form
+sb_forms_api_token = "API_TOKEN"

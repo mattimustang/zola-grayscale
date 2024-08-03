@@ -1,0 +1,21 @@
+[[contact]]
+name = "Address"
+address = "4923 Market Street, Orlando FL"
+icon = "fa-map-marked-alt"
+[[contact]]
+name = "Email"
+address = """<a href="#!">hello@yourdomain.com</a>"""
+icon = "fa-envelope"
+[[contact]]
+name = "Phone"
+address = "+1 (555) 902-8832"
+icon = "fa-mobile-alt"
+[[social]]
+icon = "fa-mastodon"
+url = "#!"
+[[social]]
+icon = "fa-facebook-f"
+url = "#!"
+[[social]]
+icon = "fa-github"
+url = "#!"
