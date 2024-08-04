@@ -25,6 +25,7 @@ Updated to use the latest Bootstrap 5.3.3.
   - [Debug](#debug)
   - [Title](#title)
   - [Google Analytics](#google-analytics)
+- [Misc](#misc)
 
 <!-- tocstop -->
 
@@ -237,7 +238,7 @@ The following sub-blocks are provided for further customisation:
 
 The `debug` macro can be used by setting `config.extra.debug` to `true`.
 This will then add a `debug` button to the footer of the page to allow you to
-inspect, by default, the `__tera_context` in a popout sidebar.
+inspect, by default, the `__tera_context` in a pop-out sidebar.
 
 If you want to debug other context information you can customise it like so.
 For example, to debug the `config` context:
@@ -256,3 +257,11 @@ might create.
 The `google_analytics` macro can be used to insert code for Google Analytics.
 Set `config.extra.google_analytics_tag` to your tag id.
 
+## Misc
+
+The `extra_head` block can be used to add extra markup to the end of the
+`<head>` of the page.
+The `extra_scripts` block can be used to add extra scripts to the end of the
+page.
+
+`static/css/custom.css` can be created and used to add any custom CSS.
