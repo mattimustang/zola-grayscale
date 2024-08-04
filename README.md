@@ -39,8 +39,11 @@ The majority of customisation is done through template inheritance.
 Every section and subsection of the page has a template `{% block %}` that you
 can override with your own content.
 
-Start by creating your own site `templates/index.html` with the following
-contents:
+
+Start by copying `themes/zola-grayscale/contact.toml` and
+`themes/zola-grayscale/navigation.toml` to your site root folder.
+
+Then create your own site `templates/index.html` with the following contents:
 
 ```html
 {% extends "zola-grayscale/templates/index.html" %}
@@ -71,10 +74,10 @@ You can add additional `item`'s and they will be automatically added to the
 navigation bar.
 
 The home link in the left of the navigation bar uses `config.title` by default
-or can be customised with the `nav_home` block.
+or can be customised with the `nav_home_title` block.
 
 ```html
-{% block nav_home %}Home{% endblock nav_home %}
+{% block nav_home_title %}Home{% endblock nav_home_title %}
 ```
 
 ### Contacts
@@ -106,6 +109,7 @@ The following sub-blocks are provided for further customisation:
   defaults to `config.title`
 * `masthead_description`:
   defaults to `config.description`
+* `masthead_button`
 * `masthead_button_url`
 * `masthead_button_tag`
 * `masthead_button_label`
@@ -197,6 +201,7 @@ The entire `signup` section can be overridden with your own markup like so:
 
 The following sub-blocks are provided for further customisation:
 
+* `signup_title`
 * `signup_form`
 
 ### Contact
