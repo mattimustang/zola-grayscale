@@ -158,8 +158,10 @@ The entire `projects` section can be overridden with your own markup like so:
 {% endblock projects %}
 ```
 
-The section has 4 sub-blocks:
+The section has these sub-blocks:
 
+* `projects_id`:
+  set the html id attribute for the projects section.
 * `featured_project` with these sub-blocks for customisation:
 
     * `featured_project_thumbnail`:
@@ -201,6 +203,8 @@ The entire `signup` section can be overridden with your own markup like so:
 
 The following sub-blocks are provided for further customisation:
 
+* `signup_id`:
+  set the html id attribute for the signup section.
 * `signup_title`
 * `signup_form`
 
@@ -216,6 +220,8 @@ The entire `contact` section can be overridden with your own markup like so:
 
 The following sub-blocks are provided for further customisation:
 
+* `contact_id`:
+  set the html id attribute for the contact section.
 * `contact_contact`
 * `contact_social`
 
