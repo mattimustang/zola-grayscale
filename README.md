@@ -205,6 +205,8 @@ The following sub-blocks are provided for further customisation:
 
 * `signup_id`:
   set the html id attribute for the signup section.
+* `signup_icon`:
+  the Font Awesome icon to use.
 * `signup_title`
 * `signup_form`
 
