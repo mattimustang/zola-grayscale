@@ -42,7 +42,7 @@
                 <ul class="navbar-nav ms-auto">
                     {% for item in navigation.item %}
                     <li class="nav-itempdown">
-                        <a class="nav-link" href="{{ item.path }}">{{ item.name }}</a>
+                        <a class="nav-link" href="{{ item.path | safe }}">{{ item.name }}</a>
                     </li>
                     {% endfor %}
                 </ul>
@@ -241,7 +241,7 @@
             {% block contact_social %}
             <div class="social d-flex justify-content-center">
                 {% for item in contact.social %}
-                <a class="mx-2" href="{{ item.url }}"><i class="fab {{ item.icon }}" aria-hidden="true"></i></a>
+                <a class="mx-2" href="{{ item.url | safe }}"><i class="fab {{ item.icon }}" aria-hidden="true"></i></a>
                 {% endfor %}
             </div>
             {% endblock contact_social %}
