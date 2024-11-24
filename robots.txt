@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://mattimustang.github.io/zola-grayscale/sitemap.xml
