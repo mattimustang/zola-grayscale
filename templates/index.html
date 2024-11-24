@@ -176,7 +176,7 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5">
                 <div class="col-md-10 col-lg-8 mx-auto text-center">
-                    <i class="far {% block signup_icon %}fa-paper-plane{% endblock signup_icon %} fa-2x mb-2 text-white"></i>
+                    <i class="fa-regular {% block signup_icon %}fa-paper-plane{% endblock signup_icon %} fa-2x mb-2 text-white"></i>
                     <h2 class="text-white mb-5">{% block signup_title %}Subscribe to receive updates!{% endblock signup_title %}</h2>
                     {% block signup_form %}
                     <!-- * * * * * * * * * * * * * * *-->
@@ -241,7 +241,7 @@
             {% block contact_social %}
             <div class="social d-flex justify-content-center">
                 {% for item in contact.social %}
-                <a class="mx-2" href="{{ item.url | safe }}"><i class="fab {{ item.icon }}" aria-hidden="true"></i></a>
+                <a class="mx-2" href="{{ item.url | safe }}"><i class="fa-brands {{ item.icon }} fa-xl" aria-hidden="true"></i></a>
                 {% endfor %}
             </div>
             {% endblock contact_social %}
