@@ -1,5 +1,5 @@
-{% macro debug(context, name) %}
-{% if config.extra.debug %}
+{% component debug_panel(json, name, enabled) %}
+{% if enabled %}
     <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#debug" aria-controls="debug">
     Debug
     </button>
@@ -19,16 +19,11 @@
 " %}
                     {% set code_end = "
 ```" %}
-                    {% if context is string %}
-                        {% set json = context %}
-                    {% else %}
-                        {% set json = context | json_encode(pretty=true) %}
-                    {% endif %}
-                    {{ code_start ~ json ~ code_end | markdown() | safe }}
+                    {{ (code_start ~ json ~ code_end) | markdown() | safe }}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 {% endif %}
-{% endmacro debug %}
+{% endcomponent debug_panel %}

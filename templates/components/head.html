@@ -1,0 +1,9 @@
+{% component doc_title(title, site_title, site_description) %}
+<title>
+  {% if title %}
+  {{ title }} &middot; {{ site_title }}
+  {% else %}
+  {{ site_title }} &middot; {{ site_description }}
+  {% endif %}
+</title>
+{% endcomponent doc_title %}

@@ -1,20 +1,21 @@
-{% import "macros/debug.html" as debug %}
-{% import "macros/head.html" as head %}
-{% import "macros/analytics.html" as analytics %}
-
 {% set navigation = load_data(path="navigation.toml") %}
 {% set contact = load_data(path="contact.toml") %}
+
+{% set page_title = "" %}
+{% if page is defined and page.title %}
+{% set page_title = page.title %}
+{% endif %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     {% block head %}
-    {{ analytics::google_analytics() }}
+    {{ <google_analytics tag={config.extra?.google_analytics_tag} /> }}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="{{ config.description }}" />
     <meta name="author" content="{{ config.author }}" />
-    {% block title %}{{ head::title() }}{% endblock title %}
+    {% block title %}{{ <doc_title title={page_title} site_title={config.title} site_description={config.description} /> }}{% endblock title %}
     <link rel="icon" type="image/x-icon" href="{{ get_url(path="assets/favicon.ico") }}" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.7.1/js/all.js" crossorigin="anonymous"></script>
@@ -186,7 +187,7 @@
                     <!-- To make this form functional, sign up at-->
                     <!-- https://startbootstrap.com/solution/contact-forms-->
                     <!-- to get an API token!-->
-                    <form class="form-signup" id="contactForm" data-sb-form-api-token="{{ config.extra.sb_forms_api_token | default(value="API_TOKEN") }}">
+                    <form class="form-signup" id="contactForm" data-sb-form-api-token="{{ config.extra?.sb_forms_api_token | default(value="API_TOKEN") }}">
                         <!-- Email address input-->
                         <div class="row input-group-newsletter">
                             <div class="col"><input class="form-control is-invalid" id="emailAddress" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" data-sb-can-submit="no"></div>
@@ -253,7 +254,7 @@
     <footer class="footer bg-black small text-center text-white-50">
         <div class="container px-4 px-lg-5">{% block footer_copyright %}Copyright &copy; {{ config.author }} {{ now() | date(format="%Y") }}{% endblock footer_copyright %}</div>
         {% block extra_footer %}{% endblock extra_footer %}
-        {% block footer_debug %}{{ debug::debug(context=__tera_context, name="__tera_context") }}{% endblock footer_debug %}
+        {% block footer_debug %}{{ <debug_panel json={__tera_context | json_encode(pretty=true)} name="__tera_context" enabled={config.extra?.debug or false} /> }}{% endblock footer_debug %}
     </footer>
     {% endblock footer %}
 <!-- Bootstrap core JS -->
@@ -261,7 +262,7 @@
 <!-- Core theme JS -->
 <script src="{{ get_url(path="js/scripts.js") }}"></script>
 {% block extra_scripts %}{% endblock extra_scripts %}
-{% if config.extra.sb_forms_api_token %}
+{% if config.extra?.sb_forms_api_token %}
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <!-- * *                               SB Forms JS                               * *-->
 <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
